@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voor de Nowiewowie</title>
+<style>
+  :root {
+    --bg: #e6f5ff;
+    --ink: #2b1b4a;
+    --muted: #5a4a7a;
+    --card-text: #2b1b4a;
+    --sun: #ffd23f;
+    --clay: #ff8a5c;
+    --fun: #4db8ff;
+    --food: #ff6b8b;
+    --light: #3ddc97;
+    --shadow: #2b1b4a;
+    --pill: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1233;
+      --ink: #fff4d6;
+      --muted: #cdbfee;
+      --shadow: #0d0720;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: ui-rounded, "Arial Rounded MT Bold", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    padding: 0 20px 56px;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(255,210,63,.35) 0 90px, transparent 91px),
+      radial-gradient(circle at 90% 70%, rgba(61,220,151,.28) 0 120px, transparent 121px),
+      radial-gradient(circle at 8% 92%, rgba(255,107,139,.22) 0 80px, transparent 81px);
+    background-attachment: fixed;
+  }
+  header {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 44px 0 28px;
+    text-align: center;
+  }
+  .sun {
+    width: 112px;
+    height: 112px;
+    margin: 0 auto 8px;
+    animation: bob 3.2s ease-in-out infinite;
+  }
+  @keyframes bob {
+    0%, 100% { transform: translateY(0) rotate(-4deg); }
+    50% { transform: translateY(-10px) rotate(4deg); }
+  }
+  h1 {
+    font-size: clamp(2.2rem, 7vw, 3.4rem);
+    line-height: 1.1;
+    margin: 0 0 10px;
+    letter-spacing: -0.5px;
+  }
+  header p {
+    margin: 0 auto;
+    max-width: 34ch;
+    font-size: 1.15rem;
+    color: var(--muted);
+  }
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 26px;
+  }
+  .site {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 24px 24px 22px;
+    border-radius: 28px;
+    border: 4px solid var(--shadow);
+    box-shadow: 8px 8px 0 var(--shadow);
+    color: var(--card-text);
+    text-decoration: none;
+    background: var(--tile);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .site:nth-child(odd) { transform: rotate(-1deg); }
+  .site:nth-child(even) { transform: rotate(1deg); }
+  .site:hover, .site:focus-visible {
+    transform: translate(-3px, -3px) rotate(0deg);
+    box-shadow: 12px 12px 0 var(--shadow);
+  }
+  .site:focus-visible { outline: 4px solid var(--ink); outline-offset: 4px; }
+  .site:active { transform: translate(4px, 4px); box-shadow: 3px 3px 0 var(--shadow); }
+  .emoji {
+    width: 68px;
+    height: 68px;
+    display: grid;
+    place-items: center;
+    font-size: 2.2rem;
+    background: var(--pill);
+    border: 4px solid var(--shadow);
+    border-radius: 50%;
+  }
+  .site h2 { margin: 4px 0 0; font-size: 1.6rem; line-height: 1.15; }
+  .site p { margin: 0; font-size: 1.05rem; flex: 1; }
+  .url {
+    align-self: flex-start;
+    margin-top: 6px;
+    padding: 6px 14px;
+    background: var(--pill);
+    border: 3px solid var(--shadow);
+    border-radius: 999px;
+    font-size: .95rem;
+    font-weight: 700;
+    word-break: break-all;
+  }
+  .clay  { --tile: var(--clay); }
+  .fun   { --tile: var(--fun); }
+  .food  { --tile: var(--food); }
+  .light { --tile: var(--sun); }
+  footer {
+    max-width: 760px;
+    margin: 40px auto 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: .95rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sun { animation: none; }
+    .site { transition: none; }
+  }
+  /* The pill and emoji circle stay light in dark mode, so their text must stay dark */
+  .url, .emoji { color: #2b1b4a; }
+</style>
+</head>
+<body>
+  <header>
+    <svg class="sun" viewBox="0 0 120 120" aria-hidden="true">
+      <g stroke="#ff8a1f" stroke-width="7" stroke-linecap="round">
+        <line x1="60" y1="6" x2="60" y2="20"/><line x1="60" y1="100" x2="60" y2="114"/>
+        <line x1="6" y1="60" x2="20" y2="60"/><line x1="100" y1="60" x2="114" y2="60"/>
+        <line x1="22" y1="22" x2="32" y2="32"/><line x1="88" y1="88" x2="98" y2="98"/>
+        <line x1="22" y1="98" x2="32" y2="88"/><line x1="88" y1="32" x2="98" y2="22"/>
+      </g>
+      <circle cx="60" cy="60" r="31" fill="#ffd23f" stroke="#2b1b4a" stroke-width="4"/>
+      <circle cx="49" cy="55" r="4" fill="#2b1b4a"/>
+      <circle cx="71" cy="55" r="4" fill="#2b1b4a"/>
+      <path d="M47 67 Q60 80 73 67" fill="none" stroke="#2b1b4a" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="42" cy="66" r="5" fill="#ff6b8b" opacity=".6"/>
+      <circle cx="78" cy="66" r="5" fill="#ff6b8b" opacity=".6"/>
+    </svg>
+    <h1>Voor de Nowiewowie</h1>
+    <p>Kies waar je zin in hebt en tik op de kaart!</p>
+  </header>
+
+  <main>
+    <a class="site clay" href="https://ohmika.github.io/noa" target="_blank" rel="noopener">
+      <span class="emoji" aria-hidden="true">🏺</span>
+      <h2>Klei ideeën</h2>
+      <p>Weet je niet wat je van klei kunt maken? Kies makkelijk, normaal of moeilijk en krijg meteen een idee.</p>
+      <span class="url">ohmika.github.io/noa</span>
+    </a>
+
+    <a class="site fun" href="https://ohmika.github.io/activiteit" target="_blank" rel="noopener">
+      <span class="emoji" aria-hidden="true">🎈</span>
+      <h2>Activiteiten</h2>
+      <p>Ideeën voor leuke uitjes in en rond Oss, gesorteerd op budget: gratis, €10 of €20 per persoon.</p>
+      <span class="url">ohmika.github.io/activiteit</span>
+    </a>
+
+    <a class="site food" href="https://ohmika.github.io/recept" target="_blank" rel="noopener">
+      <span class="emoji" aria-hidden="true">🍪</span>
+      <h2>Recepten</h2>
+      <p>Kook- en bakideeën per budget. Kies hoeveel je wilt uitgeven en laat een willekeurig idee verrassen.</p>
+      <span class="url">ohmika.github.io/recept</span>
+    </a>
+
+    <a class="site light" href="https://ohmika.github.io/sun" target="_blank" rel="noopener">
+      <span class="emoji" aria-hidden="true">🌅</span>
+      <h2>Zonsopkomst en zonsondergang</h2>
+      <p>Zie hoe laat de zon opkomt en ondergaat, zodat je de mooiste momenten van de dag niet mist.</p>
+      <span class="url">ohmika.github.io/sun</span>
+    </a>
+  </main>
+
+  <footer>Veel plezier! ☀️</footer>
+</body>
+</html>
